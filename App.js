@@ -7,12 +7,20 @@
  */
 
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button, Linking} from 'react-native';
 
 const App = () => {
   return (
     <View style={styles.body}>
-      <Text>Hello world !</Text>
+      <Text style={styles.text}>Hello world !</Text>
+      <Button
+        title="click here"
+        onPress={() => {
+          Linking.openURL(
+            'https://github.com/AyedNejmeddine/react-native-basics',
+          );
+        }}
+      />
     </View>
   );
 };
@@ -23,6 +31,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    fontSize: 30,
+    margin: 20,
   },
 });
 
