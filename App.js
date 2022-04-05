@@ -15,7 +15,13 @@ const App = () => {
   return (
     <View style={styles.body}>
       <Text style={styles.text}>{count}</Text>
-      <Button color={param.style} title="click here" onPress={onClickButton} />
+      <View style={styles.button}>
+        <Button
+          color={param.style}
+          title="click here"
+          onPress={onClickButton}
+        />
+      </View>
       <Text style={styles.text}>{param.title}</Text>
     </View>
   );
@@ -31,6 +37,10 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 30,
     margin: 20,
+  },
+  button: {
+    height: 75,
+    width: '40%',
   },
 });
 
