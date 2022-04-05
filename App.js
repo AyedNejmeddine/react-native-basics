@@ -19,9 +19,8 @@ const App = () => {
 
 const styles = StyleSheet.create({
   body: {
-    height: '100%',
-    width: '100%',
-    flexDirection: 'row-reverse',
+    flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -31,16 +30,19 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   view1: {
+    flex: 1,
     backgroundColor: '#ff0000',
     alignItems: 'center',
     justifyContent: 'center',
   },
   view2: {
+    flex: 2,
     backgroundColor: '#00ff00',
     alignItems: 'center',
     justifyContent: 'center',
   },
   view3: {
+    flex: 3,
     backgroundColor: '#0000ff',
     alignItems: 'center',
     justifyContent: 'center',
