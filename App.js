@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   body: {
     height: '100%',
     width: '100%',
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
