@@ -22,12 +22,13 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#ffffff',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
   },
   text: {
     fontSize: 50,
     margin: 10,
+    color: '#ffffff',
   },
   view1: {
     flex: 1,
