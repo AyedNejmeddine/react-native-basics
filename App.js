@@ -1,26 +1,22 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, Button, Linking} from 'react-native';
 
 const App = () => {
+  const [count, setCount] = useState(0);
+  const [param, setParam] = useState({title: 'less then 10', style: '#0000ff'});
+
+  const onClickButton = () => {
+    setCount(count + 1);
+    if (count >= 5) {
+      setParam({title: 'more then 10', style: '#ff0000'});
+    }
+  };
+
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>Hello world !</Text>
-      <Button
-        title="click here"
-        onPress={() => {
-          Linking.openURL(
-            'https://github.com/AyedNejmeddine/react-native-basics',
-          );
-        }}
-      />
+      <Text style={styles.text}>{count}</Text>
+      <Button color={param.style} title="click here" onPress={onClickButton} />
+      <Text style={styles.text}>{param.title}</Text>
     </View>
   );
 };
