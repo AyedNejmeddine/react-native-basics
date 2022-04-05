@@ -1,28 +1,18 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet, Button, Linking} from 'react-native';
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
 
 const App = () => {
-  const [count, setCount] = useState(0);
-  const [param, setParam] = useState({title: 'less then 10', style: '#0000ff'});
-
-  const onClickButton = () => {
-    setCount(count + 1);
-    if (count >= 5) {
-      setParam({title: 'more then 10', style: '#ff0000'});
-    }
-  };
-
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>{count}</Text>
-      <View style={styles.button}>
-        <Button
-          color={param.style}
-          title="click here"
-          onPress={onClickButton}
-        />
+      <View style={styles.view1}>
+        <Text style={styles.text}>1</Text>
       </View>
-      <Text style={styles.text}>{param.title}</Text>
+      <View style={styles.view2}>
+        <Text style={styles.text}>2</Text>
+      </View>
+      <View style={styles.view3}>
+        <Text style={styles.text}>3</Text>
+      </View>
     </View>
   );
 };
@@ -35,12 +25,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontSize: 30,
-    margin: 20,
+    fontSize: 50,
+    margin: 10,
   },
-  button: {
-    height: 75,
-    width: '40%',
+  view1: {
+    backgroundColor: '#ff0000',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  view2: {
+    backgroundColor: '#00ff00',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  view3: {
+    backgroundColor: '#0000ff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
