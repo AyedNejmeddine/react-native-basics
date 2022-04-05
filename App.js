@@ -7,33 +7,23 @@
  */
 
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <Text>Hello world!</Text>
-    </SafeAreaView>
+    <View style={styles.body}>
+      <Text>Hello world !</Text>
+    </View>
   );
 };
 
-// const styles = StyleSheet.create({
-//   sectionContainer: {
-//     marginTop: 32,
-//     paddingHorizontal: 24,
-//   },
-//   sectionTitle: {
-//     fontSize: 24,
-//     fontWeight: '600',
-//   },
-//   sectionDescription: {
-//     marginTop: 8,
-//     fontSize: 18,
-//     fontWeight: '400',
-//   },
-//   highlight: {
-//     fontWeight: '700',
-//   },
-// });
+const styles = StyleSheet.create({
+  body: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default App;
