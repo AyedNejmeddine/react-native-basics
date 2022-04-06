@@ -5,7 +5,7 @@ const App = () => {
   return (
     <View style={styles.body}>
       <Text style={styles.text}>Write your name here</Text>
-      <TextInput style={styles.input} />
+      <TextInput style={styles.input} placeholder="e.g. Nejmeddine" />
     </View>
   );
 };
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#555',
     borderRadius: 10,
+    textAlign: 'center',
   },
 });
 
