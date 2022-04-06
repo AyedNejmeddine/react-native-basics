@@ -1,11 +1,5 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  TouchableHighlight,
-} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Pressable} from 'react-native';
 
 const App = () => {
   const [name, setName] = useState('');
@@ -24,13 +18,17 @@ const App = () => {
         placeholder="e.g. Nejmeddine"
         onChangeText={value => setName(value)}
       />
-      <TouchableHighlight
-        style={styles.button}
+      <Pressable
+        style={({pressed}) => [
+          styles.button,
+          {backgroundColor: pressed ? '#f00' : '#0f0'},
+        ]}
+        hitSlop={{top: 30, button: 30, right: 30, left: 30}}
         onPress={onPressHandler}
-        underlayColor="#dddddd"
-        activeOpacity={0.2}>
+        android_ripple={{color: '#00f'}}
+        delayLongPress={1000}>
         <Text style={styles.text}>{submitted ? 'Clear' : 'Submit'}</Text>
-      </TouchableHighlight>
+      </Pressable>
       {submitted ? (
         <Text style={styles.text}>your are registred as : {name}</Text>
       ) : null}
@@ -62,7 +60,6 @@ const styles = StyleSheet.create({
     height: 80,
     width: 200,
     margin: 20,
-    backgroundColor: '#0d0',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 50,
