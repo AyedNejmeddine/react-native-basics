@@ -8,6 +8,7 @@ const App = () => {
     <View style={styles.body}>
       <Text style={styles.text}>Write your name here</Text>
       <TextInput
+        multiline
         style={styles.input}
         placeholder="e.g. Nejmeddine"
         onChangeText={value => setName(value)}
