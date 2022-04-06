@@ -18,7 +18,11 @@ const App = () => {
         placeholder="e.g. Nejmeddine"
         onChangeText={value => setName(value)}
       />
-      <Button title={submitted ? 'Clear' : 'Submit'} onPress={onPressHandler} />
+      <Button
+        color={'#0f0'}
+        title={submitted ? 'Clear' : 'Submit'}
+        onPress={onPressHandler}
+      />
       {submitted ? (
         <Text style={styles.text}>your are registred as : {name}</Text>
       ) : null}
