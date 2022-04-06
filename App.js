@@ -1,12 +1,37 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Pressable,
+  Alert,
+  ToastAndroid,
+} from 'react-native';
 
 const App = () => {
   const [name, setName] = useState('');
   const [submitted, setSabmitted] = useState(false);
 
   const onPressHandler = () => {
-    setSabmitted(!submitted);
+    if (name.length > 3) {
+      setSabmitted(!submitted);
+    } else {
+      Alert.alert(
+        'warning',
+        'the length of name must be longer then 3 caracteres',
+        [
+          {text: 'cancel', onPress: () => console.warn('on press cancel')},
+          {text: 'ok', onPress: () => console.warn('on press ok')},
+        ],
+        {
+          cancelable: true,
+          onDismiss: () => {
+            ToastAndroid.show('click outside the Alert', ToastAndroid.SHORT);
+          },
+        },
+      );
+    }
   };
 
   return (
@@ -24,9 +49,7 @@ const App = () => {
           {backgroundColor: pressed ? '#f00' : '#0f0'},
         ]}
         hitSlop={{top: 30, button: 30, right: 30, left: 30}}
-        onPress={onPressHandler}
-        android_ripple={{color: '#00f'}}
-        delayLongPress={1000}>
+        onPress={onPressHandler}>
         <Text style={styles.text}>{submitted ? 'Clear' : 'Submit'}</Text>
       </Pressable>
       {submitted ? (
