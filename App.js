@@ -6,6 +6,8 @@ import {
   TextInput,
   Pressable,
   Modal,
+  Image,
+  ImageBackground,
 } from 'react-native';
 
 const App = () => {
@@ -22,7 +24,11 @@ const App = () => {
   };
 
   return (
-    <View style={styles.body}>
+    <ImageBackground
+      style={styles.body}
+      source={{
+        uri: 'https://i.pinimg.com/originals/f0/40/f0/f040f07ac0ad09cc155ecc4bbface15a.jpg',
+      }}>
       <Modal
         transparent
         visible={showWornig}
@@ -64,16 +70,28 @@ const App = () => {
         <Text style={styles.text}>{submitted ? 'Clear' : 'Submit'}</Text>
       </Pressable>
       {submitted ? (
-        <Text style={styles.text}>your are registred as : {name}</Text>
-      ) : null}
-    </View>
+        <View style={styles.body}>
+          <Text style={styles.text}>your are registred as : {name}</Text>
+          <Image
+            style={styles.image}
+            source={require('./assets/done.png')}
+            resizeMode="stretch"
+          />
+        </View>
+      ) : (
+        <Image
+          style={styles.image}
+          source={require('./assets/error.png')}
+          resizeMode="stretch"
+        />
+      )}
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    backgroundColor: '#ffffff',
     alignItems: 'center',
   },
   text: {
@@ -146,6 +164,10 @@ const styles = StyleSheet.create({
     borderColor: '#999',
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
+  },
+  image: {
+    height: 100,
+    width: 100,
   },
 });
 
