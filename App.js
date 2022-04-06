@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <View style={styles.body}>
-      <ScrollView>
+      <ScrollView horizontal>
         {items.map(object => {
           return (
             <View style={styles.item} key={object.key}>
