@@ -5,8 +5,6 @@ import {
   StyleSheet,
   TextInput,
   Pressable,
-  Alert,
-  ToastAndroid,
   Modal,
 } from 'react-native';
 
