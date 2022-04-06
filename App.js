@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 
 const App = () => {
   const [items, setItems] = useState([
@@ -14,13 +14,15 @@ const App = () => {
 
   return (
     <View style={styles.body}>
-      {items.map(object => {
-        return (
-          <View style={styles.item} key={object.key}>
-            <Text style={styles.text}>{object.item}</Text>
-          </View>
-        );
-      })}
+      <ScrollView>
+        {items.map(object => {
+          return (
+            <View style={styles.item} key={object.key}>
+              <Text style={styles.text}>{object.item}</Text>
+            </View>
+          );
+        })}
+      </ScrollView>
     </View>
   );
 };
@@ -34,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontSize: 50,
+    fontSize: 80,
     margin: 10,
     color: '#000000',
     fontWeight: 'bold',
