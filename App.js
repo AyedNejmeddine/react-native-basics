@@ -4,7 +4,7 @@ import {
   Text,
   StyleSheet,
   TextInput,
-  TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
 
 const App = () => {
@@ -24,12 +24,13 @@ const App = () => {
         placeholder="e.g. Nejmeddine"
         onChangeText={value => setName(value)}
       />
-      <TouchableOpacity
+      <TouchableHighlight
         style={styles.button}
         onPress={onPressHandler}
+        underlayColor="#dddddd"
         activeOpacity={0.2}>
         <Text style={styles.text}>{submitted ? 'Clear' : 'Submit'}</Text>
-      </TouchableOpacity>
+      </TouchableHighlight>
       {submitted ? (
         <Text style={styles.text}>your are registred as : {name}</Text>
       ) : null}
