@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 
 const App = () => {
+  const [name, setName] = useState('');
+
   return (
     <View style={styles.body}>
       <Text style={styles.text}>Write your name here</Text>
-      <TextInput style={styles.input} placeholder="e.g. Nejmeddine" />
+      <TextInput
+        style={styles.input}
+        placeholder="e.g. Nejmeddine"
+        onChangeText={value => setName(value)}
+      />
+      <Text style={styles.text}>your name is : {name}</Text>
     </View>
   );
 };
