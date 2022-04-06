@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, RefreshControl} from 'react-native';
 
 const App = () => {
+  const [refresh, setRefresh] = useState(false);
   const [items, setItems] = useState([
     {key: 1, item: 'item 1'},
     {key: 2, item: 'item 2'},
@@ -12,9 +13,18 @@ const App = () => {
     {key: 7, item: 'item 7'},
   ]);
 
+  const onRefreshItem = () => {
+    setRefresh(true);
+    setItems([...items, {key: 8, item: 'item 8'}]);
+    setRefresh(false);
+  };
+
   return (
     <View style={styles.body}>
-      <ScrollView horizontal>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refresh} onRefresh={onRefreshItem} />
+        }>
         {items.map(object => {
           return (
             <View style={styles.item} key={object.key}>
