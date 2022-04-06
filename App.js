@@ -22,6 +22,7 @@ const App = () => {
         color={'#0f0'}
         title={submitted ? 'Clear' : 'Submit'}
         onPress={onPressHandler}
+        disabled={name.length <= 0 ? true : false}
       />
       {submitted ? (
         <Text style={styles.text}>your are registred as : {name}</Text>
@@ -48,6 +49,10 @@ const styles = StyleSheet.create({
     borderColor: '#555',
     borderRadius: 10,
     textAlign: 'center',
+    marginBottom: 25,
+  },
+  button: {
+    margin: 20,
   },
 });
 
