@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
 
 const App = () => {
   const [name, setName] = useState('');
+  const [submitted, setSabmitted] = useState(false);
+
+  const onPressHandler = () => {
+    setSabmitted(!submitted);
+  };
 
   return (
     <View style={styles.body}>
@@ -13,7 +18,10 @@ const App = () => {
         placeholder="e.g. Nejmeddine"
         onChangeText={value => setName(value)}
       />
-      <Text style={styles.text}>your name is : {name}</Text>
+      <Button title={submitted ? 'Clear' : 'Submit'} onPress={onPressHandler} />
+      {submitted ? (
+        <Text style={styles.text}>your are registred as : {name}</Text>
+      ) : null}
     </View>
   );
 };
