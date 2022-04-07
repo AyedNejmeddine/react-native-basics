@@ -1,24 +1,20 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {ScreenA, ScreenB} from './src/screens';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
+        inactiveColor="#5f5"
+        activeColor="#f00"
         screenOptions={({route}) => ({
           tabBarStyle: {height: 80},
-          tabBarInactiveTintColor: '#5f5',
-          tabBarActiveTintColor: '#f00',
-          tabBarInactiveBackgroundColor: '#aaa',
-          tabBarActiveBackgroundColor: '#5f5',
-          tabBarShowLabel: true,
-          tabBarLabelStyle: {fontSize: 20},
           tabBarIcon: ({focused, size, color}) => {
             let iconName;
             if (route.name === 'Screen_A') {
