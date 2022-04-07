@@ -67,15 +67,6 @@ const App = () => {
         onPressHandler={onPressHandler}
         title={submitted ? 'Clear' : 'Submit'}
       />
-      {/* <Pressable
-        style={({pressed}) => [
-          styles.button,
-          {backgroundColor: pressed ? '#f00' : '#0f0'},
-        ]}
-        hitSlop={{top: 30, button: 30, right: 30, left: 30}}
-        onPress={onPressHandler}>
-        <Text style={styles.text}>{submitted ? 'Clear' : 'Submit'}</Text>
-      </Pressable> */}
       {submitted ? (
         <View style={styles.body}>
           <Text style={styles.text}>your are registred as : {name}</Text>
