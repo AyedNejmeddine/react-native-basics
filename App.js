@@ -1,62 +1,34 @@
 import React from 'react';
-import {View, Text, StyleSheet, Pressable as Guessable} from 'react-native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {ScreenA, ScreenB} from './src/screens';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-function ScreenA({navigation}) {
-  const onPresHandler = () => {
-    navigation.navigate('Screen B');
-  };
-
-  return (
-    <View style={styles.body}>
-      <Text style={styles.text}>from screen A</Text>
-      <Guessable
-        style={({pressed}) => [
-          {backgroundColor: pressed ? '#0d0' : '#0f0'},
-          styles.button,
-        ]}
-        onPress={onPresHandler}>
-        <Text style={styles.text}>Go to a screen B</Text>
-      </Guessable>
-    </View>
-  );
-}
-
-function ScreenB({navigation}) {
-  const onPresHandler = () => {
-    // navigation.navigate('Screen A');
-    navigation.goBack();
-  };
-
-  return (
-    <View style={styles.body}>
-      <Text style={styles.text}>from screen B</Text>
-      <Guessable
-        style={({pressed}) => [
-          {backgroundColor: pressed ? '#0d0' : '#0f0'},
-          styles.button,
-        ]}
-        onPress={onPresHandler}>
-        <Text style={styles.text}>Go back to a screen A</Text>
-      </Guessable>
-    </View>
-  );
-}
-
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{header: () => null}}>
-        <Stack.Screen
-          // options={{header: () => null}}
-          name="Screen A"
-          component={ScreenA}
-        />
-        <Stack.Screen name="Screen B" component={ScreenB} />
-      </Stack.Navigator>
+      <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarIcon: ({focused, size, color}) => {
+            let iconName;
+            if (route.name === 'Screen_A') {
+              iconName = 'autoprefixer';
+              size = focused ? 35 : 20;
+              color = focused ? '#5f5' : '#555';
+            } else if (route.name === 'Screen_B') {
+              iconName = 'btc';
+              size = focused ? 35 : 20;
+              color = focused ? '#5f5' : '#555';
+            }
+            return <FontAwesome5 name={iconName} size={size} color={color} />;
+          },
+        })}>
+        <Tab.Screen name="Screen_A" component={ScreenA} />
+        <Tab.Screen name="Screen_B" component={ScreenB} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
