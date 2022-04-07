@@ -12,22 +12,31 @@ const App = () => {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({route}) => ({
+          tabBarStyle: {height: 80},
+          tabBarInactiveTintColor: '#5f5',
+          tabBarActiveTintColor: '#f00',
+          tabBarInactiveBackgroundColor: '#aaa',
+          tabBarActiveBackgroundColor: '#5f5',
+          tabBarShowLabel: true,
+          tabBarLabelStyle: {fontSize: 20},
           tabBarIcon: ({focused, size, color}) => {
             let iconName;
             if (route.name === 'Screen_A') {
               iconName = 'autoprefixer';
               size = focused ? 35 : 20;
-              color = focused ? '#5f5' : '#555';
             } else if (route.name === 'Screen_B') {
               iconName = 'btc';
               size = focused ? 35 : 20;
-              color = focused ? '#5f5' : '#555';
             }
             return <FontAwesome5 name={iconName} size={size} color={color} />;
           },
         })}>
         <Tab.Screen name="Screen_A" component={ScreenA} />
-        <Tab.Screen name="Screen_B" component={ScreenB} />
+        <Tab.Screen
+          name="Screen_B"
+          component={ScreenB}
+          options={{tabBarBadge: 5}}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
