@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
+import GlobalStyles from '../utils/GlobalStyles';
 
 export default function ScreenA({navigation, route}) {
   const onPressHandler = () => {
@@ -18,7 +19,9 @@ export default function ScreenA({navigation, route}) {
         ]}>
         <Text style={styles.text}>Go to Screen B</Text>
       </Pressable>
-      <Text style={styles.text}>{route.params?.Message}</Text>
+      <Text style={[styles.text, GlobalStyles.CustomFonts]}>
+        {route.params?.Message}
+      </Text>
     </View>
   );
 }
@@ -31,7 +34,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 40,
-    fontFamily: 'RubikMoonrocks-Regular',
     margin: 10,
   },
   button: {

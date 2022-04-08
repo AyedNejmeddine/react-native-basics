@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
+import GlobalStyles from '../utils/GlobalStyles';
 
 export default function ScreenB({navigation, route}) {
   const {ItemName, ItemId} = route.params;
@@ -21,8 +22,8 @@ export default function ScreenB({navigation, route}) {
         ]}>
         <Text style={styles.text}>Go Back to Screen A</Text>
       </Pressable>
-      <Text style={styles.text}>{ItemName}</Text>
-      <Text style={styles.text}>ID: {ItemId}</Text>
+      <Text style={[styles.text, GlobalStyles.CustomFonts]}>{ItemName}</Text>
+      <Text style={[styles.text, GlobalStyles.CustomFonts]}>ID: {ItemId}</Text>
     </View>
   );
 }
@@ -35,7 +36,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 40,
-    fontFamily: 'RubikWetPaint-Regular',
     margin: 10,
   },
   button: {
