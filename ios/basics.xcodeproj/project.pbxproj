@@ -14,6 +14,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-basics-basicsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-basics-basicsTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		B9C9C635EFD14759B32D2F55 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8610B7CA05384B0AB1EB5BA0 /* DancingScript-VariableFont_wght.ttf */; };
+		2B3385FF11EA4033B81B9282 /* RubikMoonrocks-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A70789865EAC4F44ADDF4DB5 /* RubikMoonrocks-Regular.ttf */; };
+		529E666607674D67983D66F8 /* RubikWetPaint-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E2029DF68384A5898FF6F8A /* RubikWetPaint-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = basics/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-basics-basicsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-basics-basicsTests.release.xcconfig"; path = "Target Support Files/Pods-basics-basicsTests/Pods-basics-basicsTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		8610B7CA05384B0AB1EB5BA0 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "DancingScript-VariableFont_wght.ttf"; path = "../assets/fonts/DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A70789865EAC4F44ADDF4DB5 /* RubikMoonrocks-Regular.ttf */ = {isa = PBXFileReference; name = "RubikMoonrocks-Regular.ttf"; path = "../assets/fonts/RubikMoonrocks-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9E2029DF68384A5898FF6F8A /* RubikWetPaint-Regular.ttf */ = {isa = PBXFileReference; name = "RubikWetPaint-Regular.ttf"; path = "../assets/fonts/RubikWetPaint-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				53E0C859B925413A86931A2C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +154,17 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		53E0C859B925413A86931A2C /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				8610B7CA05384B0AB1EB5BA0 /* DancingScript-VariableFont_wght.ttf */,
+				A70789865EAC4F44ADDF4DB5 /* RubikMoonrocks-Regular.ttf */,
+				9E2029DF68384A5898FF6F8A /* RubikWetPaint-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +262,9 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B9C9C635EFD14759B32D2F55 /* DancingScript-VariableFont_wght.ttf in Resources */,
+				2B3385FF11EA4033B81B9282 /* RubikMoonrocks-Regular.ttf in Resources */,
+				529E666607674D67983D66F8 /* RubikWetPaint-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

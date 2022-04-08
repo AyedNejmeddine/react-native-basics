@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 40,
-    fontWeight: 'bold',
+    fontFamily: 'RubikWetPaint-Regular',
     margin: 10,
   },
   button: {
