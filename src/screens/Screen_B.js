@@ -1,23 +1,28 @@
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 
-export default function ScreenB({navigation}) {
-  const onPresHandler = () => {
-    // navigation.navigate('Screen A');
-    navigation.goBack();
+export default function ScreenB({navigation, route}) {
+  const {ItemName, ItemId} = route.params;
+
+  const onPressHandler = () => {
+    navigation.navigate('Screen_A', {Message: 'message from B'});
+    // navigation.goBack();
+    // navigation.setParams({ ItemId: 14 });
   };
 
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>from screen B</Text>
+      <Text style={styles.text}>Screen B</Text>
       <Pressable
+        onPress={onPressHandler}
         style={({pressed}) => [
-          {backgroundColor: pressed ? '#0d0' : '#0f0'},
           styles.button,
-        ]}
-        onPress={onPresHandler}>
-        <Text style={styles.text}>Go back to a screen A</Text>
+          {backgroundColor: pressed ? '#ddd' : '#0f0'},
+        ]}>
+        <Text style={styles.text}>Go Back to Screen A</Text>
       </Pressable>
+      <Text style={styles.text}>{ItemName}</Text>
+      <Text style={styles.text}>ID: {ItemId}</Text>
     </View>
   );
 }
@@ -25,13 +30,13 @@ export default function ScreenB({navigation}) {
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
-    fontSize: 30,
+    fontSize: 40,
+    fontWeight: 'bold',
     margin: 10,
-    color: '#000000',
   },
   button: {
     height: 80,

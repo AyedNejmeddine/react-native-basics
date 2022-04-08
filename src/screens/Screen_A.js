@@ -1,22 +1,24 @@
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 
-export default function ScreenA({navigation}) {
-  const onPresHandler = () => {
-    navigation.navigate('Screen B');
+export default function ScreenA({navigation, route}) {
+  const onPressHandler = () => {
+    navigation.navigate('Screen_B');
+    // navigation.toggleDrawer();
   };
 
   return (
     <View style={styles.body}>
-      <Text style={styles.text}>from screen A</Text>
+      <Text style={styles.text}>Screen A</Text>
       <Pressable
+        onPress={onPressHandler}
         style={({pressed}) => [
-          {backgroundColor: pressed ? '#0d0' : '#0f0'},
           styles.button,
-        ]}
-        onPress={onPresHandler}>
-        <Text style={styles.text}>Go to a screen B</Text>
+          {backgroundColor: pressed ? '#ddd' : '#0f0'},
+        ]}>
+        <Text style={styles.text}>Go to Screen B</Text>
       </Pressable>
+      <Text style={styles.text}>{route.params?.Message}</Text>
     </View>
   );
 }
@@ -24,13 +26,13 @@ export default function ScreenA({navigation}) {
 const styles = StyleSheet.create({
   body: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
-    fontSize: 30,
+    fontSize: 40,
+    fontWeight: 'bold',
     margin: 10,
-    color: '#000000',
   },
   button: {
     height: 80,
